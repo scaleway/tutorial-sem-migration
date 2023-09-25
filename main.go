@@ -17,7 +17,7 @@ func main() {
 	secretIds := []string{
 		"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
 		"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+       		"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
 	}
 
 	// We now create a folder `my-folder` in order to migrate our secrets in it.
