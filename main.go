@@ -15,23 +15,23 @@ func main() {
 
 	// IDs of the secrets to migrate (make sure you replace the IDs below with the IDs of the secrets you want to migrate)
 	secretIds := []string{
-		"ce8c000e-79df-4e95-9ac6-bb12ef3cd5fa",
-		"60bb08e3-2f37-43b9-b932-75e109dbaa58",
-        "042a7d50-511d-426f-bdfc-eaf66c81a5bd",
+		"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+		"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
 	}
 
-	// We create a folder `new-folder` in order to migrate our secrets in it
-	folderPath := "/new-folder"
+	// We now create a folder `my-folder` in order to migrate our secrets in it.
+	folderPath := "/my-folder"
 	folder, _ := api.CreateFolder(&secret_manager.CreateFolderRequest{
 		ProjectID: projectID,
-		Name:      "new-folder",
+		Name:      "my-folder",
 		Path:      &folderPath,
 	})
-	fmt.Println("New folder : ")
+	fmt.Println("Folder : ")
 	fmt.Println("Name: ", folder.Name, " Path: ", folder.Path)
 
-	// We migrate our secrets into the folder `new-folder`
-	destinationPath := "/new-folder"
+	// We migrate our secrets into the folder `my-folder`
+	destinationPath := "/my-folder"
 	for _, secretId := range secretIds {
 		updatedSecret, _ := api.UpdateSecret(&secret_manager.UpdateSecretRequest{
 			SecretID: secretId,
